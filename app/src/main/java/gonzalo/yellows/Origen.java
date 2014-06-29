@@ -18,6 +18,7 @@ import java.util.ArrayList;
 
 import data.CustomAdapter;
 import models.Parada;
+import utils.Utils;
 
 /**
  * Created by gonzalobarbalopez on 22/06/14.
@@ -48,26 +49,10 @@ public class Origen extends Fragment {
 
     }
 
-    public String loadJSONFromAsset() {
-        String json = null;
-        try {
-            InputStream is = this.getActivity().getAssets().open("paradas.json"); //getAssets().open("yourfilename.json");
-            int size = is.available();
-            byte[] buffer = new byte[size];
-            is.read(buffer);
-            is.close();
-            json = new String(buffer, "UTF-8");
-
-        } catch (IOException ex) {
-            ex.printStackTrace();
-            return null;
-        }
-        return json;
-    }
-
     public ArrayList<Parada> GetParadas(){
         try {
-            JSONObject jsonResponse = new JSONObject(loadJSONFromAsset());
+            //JSONObject jsonResponse = new JSONObject(loadJSONFromAsset());
+            JSONObject jsonResponse = new JSONObject(Utils.loadJSONFromAsset(this.getActivity(),"paradas.json"));
             JSONArray jsonArray = jsonResponse.getJSONArray("paradas");
             JSONObject jsonObject;
             for (int i = 1; i <= jsonArray.length(); i++) {
