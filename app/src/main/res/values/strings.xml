@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="app_name">Yellows</string>
+    <string name="title_section1">Favoritos</string>
+    <string name="title_section2">Origen</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="action_example">Example action</string>
+    <string name="action_settings">Settings</string>
+
+
+    <string-array name="array_paradas">
+        <item>Sanlucar</item>
+        <item>Jerez</item>
+        <item>Chipiona</item>
+    </string-array>
+
+</resources>
